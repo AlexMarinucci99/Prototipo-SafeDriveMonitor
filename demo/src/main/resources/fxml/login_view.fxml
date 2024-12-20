@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20" alignment="CENTER" xmlns="http://javafx.com/javafx/20"
+      xmlns:fx="http://javafx.com/fxml" fx:controller="it.yourcompany.alcoholmonitoring.controller.LoginController">
+    <Label text="Seleziona il ruolo:"/>
+    <Button text="Accesso Come Conducente" onAction="#onConductorAccess"/>
+    <Button text="Accesso Come Amministratore" onAction="#onAdminAccess"/>
+</VBox>

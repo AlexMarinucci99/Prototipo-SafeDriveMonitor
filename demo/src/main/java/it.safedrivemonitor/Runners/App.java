@@ -14,12 +14,22 @@ public class App extends Application {
     public void start(Stage primaryStage) throws IOException {
         // Inizializziamo il Database
         DatabaseManager dbManager = new DatabaseManager();
-        dbManager.initDB();
+        MonitoringController monitoringController = new MonitoringController(dbManager);
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/login_view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 400, 200);
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Sistema Monitoraggio - Login");
-        primaryStage.show();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/conductor_view.fxml"));
+        loader.setControllerFactory(type -> {
+            if (type == ConductorController.class) {
+                return new ConductorController(monitoringController);
+            } else if (type == AdminController.class) {
+                return new AdminController(dbManager);
+            }
+            // ...
+            try {
+                return type.getDeclaredConstructor().newInstance();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        });
+        Scene scene = new Scene(loader.load(), 400, 300);
     }
 }

@@ -38,17 +38,25 @@ public class MonitoringController {
         return new TestResult(passed, alcohol, thc, cocaine, mdma);
     }
 
-    private void saveReading(String driverId, double alcohol, double thc, double cocaine, double mdma, String result) {
-        String sql = "INSERT INTO readings(driver_id, alcohol_level, thc_level, cocaine_level, mdma_level, result) VALUES(?,?,?,?,?,?)";
+    if(!passed)
 
+    {
+        saveReading(driverId, alcohol, thc, cocaine, mdma, "BLOCKED");
+        saveAlert(driverId, alcohol, thc, cocaine, mdma); // nuovo metodo
+    }else
+    {
+        saveReading(driverId, alcohol, thc, cocaine, mdma, "OK");
+    }
+
+    private void saveAlert(String driverId, double alcohol, double thc, double cocaine, double mdma) {
+        String sql = "INSERT INTO alerts(driver_id, alcohol_level, thc_level, cocaine_level, mdma_level) VALUES(?,?,?,?,?)";
         try (Connection conn = dbManager.getConnection();
-                PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, driverId);
             pstmt.setDouble(2, alcohol);
             pstmt.setDouble(3, thc);
             pstmt.setDouble(4, cocaine);
             pstmt.setDouble(5, mdma);
-            pstmt.setString(6, result);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

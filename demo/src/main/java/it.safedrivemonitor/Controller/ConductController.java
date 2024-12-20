@@ -7,6 +7,8 @@ import it.yourcompany.alcoholmonitoring.model.MonitoringController;
 
 public class ConductorController {
 
+    private final MonitoringController monitoringController;
+
     @FXML
     private TextField driverIdField;
     @FXML
@@ -16,7 +18,9 @@ public class ConductorController {
     @FXML
     private Label authorityLabel;
 
-    private MonitoringController monitoringController = new MonitoringController();
+    public ConductorController(MonitoringController monitoringController) {
+        this.monitoringController = monitoringController;
+    }
 
     @FXML
     private void onExecuteTest() {

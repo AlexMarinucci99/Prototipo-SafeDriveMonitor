@@ -1,0 +1,29 @@
+.label {
+    font-size: 14px;
+    font-size: 14px;
+    font-size: 14px;
+    font-size: 14px;
+    -fx-font-size: 14px;
+}
+
+.button {
+    font-size: 14px;
+    -fx-font-size: 14px;
+}
+
+.error-label {
+    -fx-text-fill: red;
+    font-size: 14px;
+    -fx-font-size: 14px;
+    font-weight: bold;
+    font-weight: bold;
+    -fx-font-weight: bold;
+}
+
+.success-label {
+    -fx-text-fill: green;
+    font-size: 14px;
+    -fx-font-size: 14px;
+    font-weight: bold;
+    -fx-font-weight: bold;
+}
