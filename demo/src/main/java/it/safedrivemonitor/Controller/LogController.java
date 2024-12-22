@@ -1,15 +1,14 @@
 package it.safedrivemonitor.Controller;
 
+import it.safedrivemonitor.model.DatabaseManager;
+import it.safedrivemonitor.model.Reading;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import it.yourcompany.alcoholmonitoring.model.DatabaseManager;
-import it.yourcompany.alcoholmonitoring.model.Reading;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.application.Platform;
+import javafx.scene.control.cell.PropertyValueFactory;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +34,7 @@ public class LogController {
     @FXML
     private TableColumn<Reading, String> timestampCol;
 
-    private DatabaseManager dbManager = new DatabaseManager();
+    private final DatabaseManager dbManager = new DatabaseManager();
 
     @FXML
     public void initialize() {

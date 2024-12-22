@@ -4,6 +4,6 @@
 
 <VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/20" 
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="it.yourcompany.alcoholmonitoring.controller.AdminController">
+      fx:controller="it.safedrivemonitor.Controller.AdminLoginController">
     <Button text="Visualizza Log" onAction="#onViewLog"/>
 </VBox>

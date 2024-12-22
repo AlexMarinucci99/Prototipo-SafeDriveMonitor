@@ -1,5 +1,9 @@
 package it.safedrivemonitor.model;
 
+/**
+ * Entità che rappresenta una riga nella tabella readings (o un record
+ * generico).
+ */
 public class Reading {
     private int id;
     private String driverId;
@@ -9,41 +13,6 @@ public class Reading {
     private double mdmaLevel;
     private String result;
     private String timestamp;
-
-    // Getters e Setters
-}
-
-    public double getThcLevel() {
-        return thcLevel;
-    }
-
-    public void setThcLevel(double thcLevel) {
-        this.thcLevel = thcLevel;
-    }
-
-    public double getCocaineLevel() {
-        return cocaineLevel;
-    }
-
-    public void setCocaineLevel(double cocaineLevel) {
-        this.cocaineLevel = cocaineLevel;
-    }
-
-    public String getResult() {
-        return result;
-    }
-
-    public void setResult(String result) {
-        this.result = result;
-    }
-
-    public String getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
-    }
 
     public int getId() {
         return id;
@@ -65,6 +34,47 @@ public class Reading {
         return alcoholLevel;
     }
 
-public void setAlcoholLevel(double alcoholLevel) {
-    this.alcoholLevel = alcoholLevel;
+    public void setAlcoholLevel(double alcoholLevel) {
+        this.alcoholLevel = alcoholLevel;
+    }
+
+    public double getThcLevel() {
+        return thcLevel;
+    }
+
+    public void setThcLevel(double thcLevel) {
+        this.thcLevel = thcLevel;
+    }
+
+    public double getCocaineLevel() {
+        return cocaineLevel;
+    }
+
+    public void setCocaineLevel(double cocaineLevel) {
+        this.cocaineLevel = cocaineLevel;
+    }
+
+    public double getMdmaLevel() {
+        return mdmaLevel;
+    }
+
+    public void setMdmaLevel(double mdmaLevel) {
+        this.mdmaLevel = mdmaLevel;
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
 }

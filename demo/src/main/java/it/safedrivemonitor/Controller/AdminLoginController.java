@@ -9,11 +9,20 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import it.safedrivemonitor.model.DatabaseManager;
+
 public class AdminLoginController {
     @FXML
     private TextField usernameField;
     @FXML
     private PasswordField passwordField;
+
+    // Non è strettamente usata qui, ma potresti usarla per log, analisi, ecc.
+    private final DatabaseManager dbManager;
+
+    public AdminLoginController(DatabaseManager dbManager) {
+        this.dbManager = dbManager;
+    }
 
     @FXML
     private void onLogin() {
@@ -21,9 +30,8 @@ public class AdminLoginController {
         String pass = passwordField.getText();
 
         if ("admin".equals(user) && "admin123".equals(pass)) {
-            // Carica vista admin
             try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/admin_view.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/admin_view.fxml"));
                 Scene scene = new Scene(loader.load(), 600, 400);
                 Stage stage = (Stage) usernameField.getScene().getWindow();
                 stage.setScene(scene);
@@ -33,7 +41,6 @@ public class AdminLoginController {
                 e.printStackTrace();
             }
         } else {
-            // Mostra errore
             System.out.println("Credenziali non valide");
         }
     }
@@ -41,7 +48,7 @@ public class AdminLoginController {
     @FXML
     private void onViewLog() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/admin_log.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/admin_log.fxml"));
             Scene scene = new Scene(loader.load(), 600, 400);
             Stage stage = new Stage();
             stage.setScene(scene);

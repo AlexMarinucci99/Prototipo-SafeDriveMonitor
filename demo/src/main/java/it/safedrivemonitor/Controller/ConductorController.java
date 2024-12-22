@@ -1,9 +1,9 @@
 package it.safedrivemonitor.Controller;
 
+import it.safedrivemonitor.model.MonitoringController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import it.yourcompany.alcoholmonitoring.model.MonitoringController;
 
 public class ConductorController {
 
@@ -43,7 +43,6 @@ public class ConductorController {
             testResultLabel.setStyle("-fx-text-fill: red;");
             vehicleStatusLabel.setText("VEICOLO BLOCCATO");
             vehicleStatusLabel.setStyle("-fx-text-fill: red;");
-
             authorityLabel.setText("Notifica alle autorità inviata");
         }
     }

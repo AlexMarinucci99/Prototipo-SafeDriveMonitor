@@ -5,7 +5,7 @@
 
 <VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/20" 
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="it.yourcompany.alcoholmonitoring.controller.ConductorController">
+      fx:controller="it.safedrivemonitor.Controller.ConductorController">
     <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
     <Label text="Inserisci ID Conducente:"/>
     <TextField fx:id="driverIdField" promptText="ID Conducente"/>
