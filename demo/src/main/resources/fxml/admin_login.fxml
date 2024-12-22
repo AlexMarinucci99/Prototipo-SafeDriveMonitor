@@ -2,8 +2,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox spacing="10" alignment="CENTER" xmlns="http://javafx.com/javafx/20"
-      xmlns:fx="http://javafx.com/fxml" fx:controller="it.safedrivemonitor.Controller.AdminLoginController">
+<VBox spacing="10" alignment="CENTER"
+      xmlns="http://javafx.com/javafx/20"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="it.safedrivemonitor.Controller.AdminLoginController">
     <Label text="Login Admin"/>
     <TextField fx:id="usernameField" promptText="Username"/>
     <PasswordField fx:id="passwordField" promptText="Password"/>

@@ -1,29 +1,78 @@
+/* Stile di base per tutti i Label */
 .label {
     font-size: 14px;
-    font-size: 14px;
-    font-size: 14px;
-    font-size: 14px;
     -fx-font-size: 14px;
+    -fx-text-fill: #700000;          /* testo grigio scuro */
+    font-family: "Open Sans";
+    -fx-font-family: "Open Sans"; /* font di base */
 }
 
+/* Stile di base per tutti i Button */
 .button {
-    font-size: 14px;
-    -fx-font-size: 14px;
+    font-family: "Open Sans";
+    -fx-font-family: "Open Sans";
+}
+.admin-root {
+    background-color: #8a0f0f;
+    -fx-background-color: #2d0797;
+    padding: 20px;
+    -fx-padding: 20px;
 }
 
+/* Etichette di errore (uso di class="error-label") */
 .error-label {
-    -fx-text-fill: red;
-    font-size: 14px;
-    -fx-font-size: 14px;
-    font-weight: bold;
     font-weight: bold;
     -fx-font-weight: bold;
+    font-size: 14px;
+    -fx-font-size: 14px;
 }
 
+/* Etichette di successo (uso di class="success-label") */
 .success-label {
+    color: green;
     -fx-text-fill: green;
     font-size: 14px;
     -fx-font-size: 14px;
     font-weight: bold;
     -fx-font-weight: bold;
+}
+
+.login-root {
+    background-color: #f0f0f0;
+    -fx-background-color: #f0f0f0;
+    font-size: 18px;
+    -fx-font-size: 18px;
+}
+
+/* Title label style */
+.title-label {
+    -fx-background-color: #007BFF;
+    background-color: #007BFF;
+    -fx-text-fill: white;
+    color: white;
+    font-weight: bold;
+    -fx-font-weight: bold;
+    -fx-pref-width: 220px;
+    -fx-pref-height: 40px;
+    -fx-background-radius: 5px;
+}
+
+/* Primary button hover */
+.primary-button:hover {
+    background-color: #0056b3;
+    -fx-background-color: #0056b3;
+    -fx-background-radius: 5;
+}
+
+/* Secondary button */
+.secondary-button {
+    background-color: #6c757d;
+    -fx-background-color: #6c757d;
+    -fx-background-radius: 5;
+}
+
+/* Secondary button hover */
+.secondary-button:hover {
+    background-color: #343a40;
+    -fx-background-color: #343a40;
 }

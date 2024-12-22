@@ -17,7 +17,6 @@ public class AdminLoginController {
     @FXML
     private PasswordField passwordField;
 
-    // Non è strettamente usata qui, ma potresti usarla per log, analisi, ecc.
     private final DatabaseManager dbManager;
 
     public AdminLoginController(DatabaseManager dbManager) {
@@ -29,10 +28,13 @@ public class AdminLoginController {
         String user = usernameField.getText();
         String pass = passwordField.getText();
 
-        if ("admin".equals(user) && "admin123".equals(pass)) {
+        // Esempio: user=admin, pass=admin (o admin/admin123, come preferisci)
+        if ("admin".equals(user) && "admin".equals(pass)) {
             try {
+                // Carichiamo la vista 'admin_view.fxml' che ha AdminController
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/admin_view.fxml"));
                 Scene scene = new Scene(loader.load(), 600, 400);
+
                 Stage stage = (Stage) usernameField.getScene().getWindow();
                 stage.setScene(scene);
                 stage.setTitle("Amministratore");
@@ -45,17 +47,21 @@ public class AdminLoginController {
         }
     }
 
-    @FXML
-    private void onViewLog() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/admin_log.fxml"));
-            Scene scene = new Scene(loader.load(), 600, 400);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.setTitle("Log Letture");
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    // Se non serve più, rimuovi pure:
+    /*
+     * @FXML
+     * private void onViewLog() {
+     * try {
+     * FXMLLoader loader = new
+     * FXMLLoader(getClass().getResource("/fxml/admin_log.fxml"));
+     * Scene scene = new Scene(loader.load(), 600, 400);
+     * Stage stage = new Stage();
+     * stage.setScene(scene);
+     * stage.setTitle("Log Letture");
+     * stage.show();
+     * } catch (IOException e) {
+     * e.printStackTrace();
+     * }
+     * }
+     */
 }

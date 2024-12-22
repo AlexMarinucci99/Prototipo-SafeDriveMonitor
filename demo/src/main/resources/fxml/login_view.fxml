@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/20"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="it.safedrivemonitor.Controller.LoginController"
+      spacing="20"
+      alignment="CENTER"
+      stylesheets="@../css/styles.css"
+      styleClass="login-root">
 
-<VBox spacing="20" alignment="CENTER" xmlns="http://javafx.com/javafx/20"
-      xmlns:fx="http://javafx.com/fxml" fx:controller="it.safedrivemonitor.Controller.LoginController">
-    <Label text="Seleziona il ruolo:"/>
-    <Button text="Accesso Come Conducente" onAction="#onConductorAccess"/>
-    <Button text="Accesso Come Amministratore" onAction="#onAdminAccess"/>
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    
+    <Label text="Benvenuto in SAFEDRIVEMONITOR" styleClass="title-label"/>
+    
+    <Button fx:id="onConductorAccess" 
+            text="Login Conducente" 
+            onAction="#onConductorAccess" 
+            styleClass="primary-button"/>
+    <Button fx:id="onAdminAccess" 
+            text="Login Amministratore" 
+            onAction="#onAdminAccess" 
+            styleClass="secondary-button"/>
 </VBox>
