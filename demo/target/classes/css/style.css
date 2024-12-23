@@ -2,77 +2,92 @@
 .label {
     font-size: 14px;
     -fx-font-size: 14px;
-    -fx-text-fill: #700000;          /* testo grigio scuro */
+    -fx-text-fill: #700000;
     font-family: "Open Sans";
-    -fx-font-family: "Open Sans"; /* font di base */
+    -fx-font-family: "Open Sans";
 }
 
 /* Stile di base per tutti i Button */
 .button {
     font-family: "Open Sans";
     -fx-font-family: "Open Sans";
-}
-.admin-root {
-    background-color: #8a0f0f;
-    -fx-background-color: #2d0797;
-    padding: 20px;
-    -fx-padding: 20px;
+    cursor: pointer; /* standard property */
+    -fx-cursor: hand; /* rende il puntatore a mano al passaggio */
 }
 
-/* Etichette di errore (uso di class="error-label") */
-.error-label {
-    font-weight: bold;
-    -fx-font-weight: bold;
-    font-size: 14px;
-    -fx-font-size: 14px;
-}
-
-/* Etichette di successo (uso di class="success-label") */
-.success-label {
-    color: green;
-    -fx-text-fill: green;
-    font-size: 14px;
-    -fx-font-size: 14px;
-    font-weight: bold;
-    -fx-font-weight: bold;
-}
-
+/* Root del layout Login */
 .login-root {
-    background-color: #f0f0f0;
-    -fx-background-color: #f0f0f0;
-    font-size: 18px;
-    -fx-font-size: 18px;
+    /* Sfondo con gradiente, oppure colore unico:
+       Scegli la tua preferenza. Esempio di gradiente: */
+    background-color: #fafafa;
+    -fx-background-color: linear-gradient(to bottom, #fafafa, #dedede);
+
+    /* Se vuoi un colore unico al posto del gradiente, disattiva la riga sopra
+       e usa ad esempio:  -fx-background-color: #f0f0f0; */
+
+    padding: 30px; /* standard property */
+    -fx-padding: 30px; /* già definito anche in FXML, ma se vuoi più margine puoi regolare */
 }
 
 /* Title label style */
 .title-label {
-    -fx-background-color: #007BFF;
-    background-color: #007BFF;
-    -fx-text-fill: white;
-    color: white;
-    font-weight: bold;
-    -fx-font-weight: bold;
-    -fx-pref-width: 220px;
-    -fx-pref-height: 40px;
-    -fx-background-radius: 5px;
+    /* Caratteristiche del testo */
+    font-size: 24px;            /* standard property */
+    -fx-font-size: 24px;        /* grandezza testo */
+    font-weight: bold;          /* standard property */
+    -fx-font-weight: bold;      /* grassetto */
+    font-style: italic;         /* standard property */
+    -fx-font-style: italic;     /* corsivo */
+    -fx-text-fill: #333333;     /* colore scuro */
+
+    /* Leggera ombra */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 5,0,2,2);
 }
 
-/* Primary button hover */
+/* --- Bottoni primari --- */
+.primary-button {
+    background-color: #007BFF;
+    -fx-background-color: #007BFF;
+    -fx-text-fill: white;
+    font-weight: bold; 
+    -fx-font-weight: bold;
+    -fx-pref-width: 140;
+    -fx-pref-height: 40;
+    -fx-background-radius: 8;
+    cursor: pointer;
+    -fx-cursor: hand;
+}
 .primary-button:hover {
     background-color: #0056b3;
     -fx-background-color: #0056b3;
-    -fx-background-radius: 5;
 }
 
-/* Secondary button */
+/* --- Bottoni secondari --- */
 .secondary-button {
-    background-color: #6c757d;
-    -fx-background-color: #6c757d;
-    -fx-background-radius: 5;
+    background-color: #8d0000;
+    -fx-background-color: #ff3300;
+    -fx-text-fill: rgb(255, 0, 255);
+    font-weight: bold;
+    -fx-font-weight: bold;
+    -fx-pref-width: 160;
+    -fx-pref-height: 40;
+    -fx-background-radius: 8;
+    cursor: pointer;
+    -fx-cursor: hand;
+}
+.secondary-button:hover {
+    background-color: #00be29;
+    -fx-background-color: #00ec9e;
 }
 
-/* Secondary button hover */
-.secondary-button:hover {
-    background-color: #343a40;
-    -fx-background-color: #343a40;
+/* --- Esempio di root admin (se la userai altrove) ---
+.admin-root {
+    -fx-background-color: #2d0797;
+    -fx-padding: 20px;
 }
+*/
+
+/* 
+   Se avevi error-label, success-label, ecc. li puoi mantenere,
+   ma li ho omessi qui per brevità.
+*/
