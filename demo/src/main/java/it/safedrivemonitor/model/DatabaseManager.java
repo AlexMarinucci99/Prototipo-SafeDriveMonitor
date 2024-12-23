@@ -15,6 +15,7 @@ public class DatabaseManager {
                 try (Statement stmt = conn.createStatement()) {
                     String sql = "CREATE TABLE IF NOT EXISTS readings ("
                             + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                            + "driver_name TEXT,"
                             + "driver_id TEXT,"
                             + "alcohol_level REAL,"
                             + "thc_level REAL,"
@@ -31,6 +32,7 @@ public class DatabaseManager {
                     String sqlAlerts = "CREATE TABLE IF NOT EXISTS alerts ("
                             + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
                             + "driver_id TEXT,"
+                            + "driver_name TEXT,"
                             + "alcohol_level REAL,"
                             + "thc_level REAL,"
                             + "cocaine_level REAL,"

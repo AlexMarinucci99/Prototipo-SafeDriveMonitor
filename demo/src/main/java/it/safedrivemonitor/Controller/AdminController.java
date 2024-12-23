@@ -1,14 +1,17 @@
-package it.safedrivemonitor.Controller;
+package it.safedrivemonitor.controller;
 
 import it.safedrivemonitor.model.DatabaseManager;
 import it.safedrivemonitor.model.Reading;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -83,4 +86,26 @@ public class AdminController {
             Platform.runLater(() -> tableView.getItems().setAll(readings));
         }).start();
     }
+
+    @FXML
+    private void onBack() {
+        try {
+            Stage stage = (Stage) tableView.getScene().getWindow();
+            double currentW = stage.getWidth();
+            double currentH = stage.getHeight();
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login_view.fxml"));
+            Scene scene = new Scene(loader.load());
+
+            stage.setScene(scene);
+            stage.setWidth(currentW);
+            stage.setHeight(currentH);
+
+            stage.setTitle("SafeDriveMonitor-Home");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

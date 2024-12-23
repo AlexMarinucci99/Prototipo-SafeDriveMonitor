@@ -4,7 +4,7 @@
 
 <VBox spacing="10" xmlns="http://javafx.com/javafx/20"
       xmlns:fx="http://javafx.com/fxml"
-      fx:controller="it.safedrivemonitor.Controller.LogController">
+      fx:controller="it.safedrivemonitor.controller.LogController">
     <TableView fx:id="tableView" prefHeight="300" prefWidth="600">
         <columns>
             <TableColumn text="ID" fx:id="idCol"/>

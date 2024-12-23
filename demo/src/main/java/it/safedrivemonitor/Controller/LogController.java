@@ -1,4 +1,4 @@
-package it.safedrivemonitor.Controller;
+package it.safedrivemonitor.controller;
 
 import it.safedrivemonitor.model.DatabaseManager;
 import it.safedrivemonitor.model.Reading;

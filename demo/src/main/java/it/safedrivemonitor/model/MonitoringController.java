@@ -34,7 +34,7 @@ public class MonitoringController {
                 && cocaine <= COCAINE_THRESHOLD
                 && mdma <= MDMA_THRESHOLD;
 
-        String result = passed ? "OK" : "BLOCKED";
+        String result = passed ? "NEGATIVO" : "POSITIVO";
         // Salviamo comunque nel DB la lettura
         saveReading(driverId, alcohol, thc, cocaine, mdma, result);
 
@@ -100,5 +100,10 @@ public class MonitoringController {
             this.cocaine = cocaine;
             this.mdma = mdma;
         }
+    }
+
+    public DatabaseManager getDbManager() {
+
+        return this.dbManager;
     }
 }

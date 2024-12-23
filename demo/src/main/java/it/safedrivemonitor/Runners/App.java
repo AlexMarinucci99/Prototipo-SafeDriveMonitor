@@ -23,9 +23,9 @@ public class App extends Application {
         // 2. Carichiamo la vista iniziale (login_view.fxml)
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login_view.fxml"));
 
-        Scene scene = new Scene(loader.load(), 400, 200);
+        Scene scene = new Scene(loader.load(), 600, 600);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Sistema Monitoraggio - Login");
+        primaryStage.setTitle("SafeDriveMonitor-Home");
         primaryStage.show();
     }
 
