@@ -33,7 +33,7 @@ public class AdminLoginController {
             try {
                 // Carichiamo la vista 'admin_view.fxml' che ha AdminController
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/admin_view.fxml"));
-                Scene scene = new Scene(loader.load(), 600, 400);
+                Scene scene = new Scene(loader.load(), 600, 600);
 
                 Stage stage = (Stage) usernameField.getScene().getWindow();
                 stage.setScene(scene);

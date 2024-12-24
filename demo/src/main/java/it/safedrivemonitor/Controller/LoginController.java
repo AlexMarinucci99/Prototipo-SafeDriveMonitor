@@ -49,7 +49,7 @@ public class LoginController {
                 }
             });
 
-            Scene scene = new Scene(loader.load(), 300, 200);
+            Scene scene = new Scene(loader.load(), 600, 600);
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.setTitle("Login Admin");

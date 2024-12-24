@@ -76,7 +76,7 @@ public class ConductorMainController {
             ConductorResultsController controller = loader.getController();
             controller.setDriverId(ConductorSession.id);
 
-            Scene scene = new Scene(root, 500, 400);
+            Scene scene = new Scene(root, 600, 600);
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.setTitle("I miei risultati");

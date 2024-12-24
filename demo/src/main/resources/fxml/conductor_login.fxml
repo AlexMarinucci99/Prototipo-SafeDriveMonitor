@@ -14,16 +14,18 @@
       stylesheets="@../css/styles.css"
       styleClass="login-root">
 
+
+
     <padding>
         <Insets top="30" right="30" bottom="30" left="30"/>
     </padding>
 
     <Label text="Login Conducente" styleClass="title-label"/>
 
-    <Label text="Inserisci Nome Conducente:"/>
+    <Label text="Nome e Cognome:"/>
     <TextField fx:id="driverNameField" promptText="Nome Conducente"/>
 
-    <Label text="Inserisci ID Conducente:"/>
+    <Label text="ID Conducente:"/>
     <TextField fx:id="driverIdField" promptText="ID Conducente"/>
 
     <Button text="Accedi" onAction="#onLogin" styleClass="primary-button"/>

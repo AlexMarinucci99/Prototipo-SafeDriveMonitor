@@ -24,10 +24,10 @@
     <Label text="Conducente: Esegui il test" styleClass="title-label"/>
 
     <!-- Campi per Nome e ID -->
-    <Label text="Inserisci Nome Conducente:"/>
+    <Label text="Nome e Cognome"/>
     <TextField fx:id="driverNameField" promptText="Nome Conducente"/>
 
-    <Label text="Inserisci ID Conducente:"/>
+    <Label text="ID Conducente:"/>
     <TextField fx:id="driverIdField" promptText="ID Conducente"/>
 
     <!-- Spinner e messaggio di stato dispositivo -->
