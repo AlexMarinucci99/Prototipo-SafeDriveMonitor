@@ -5,9 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.function.UnaryOperator;
 
 public class ConductorLoginController {
 
@@ -16,6 +18,20 @@ public class ConductorLoginController {
 
     @FXML
     private TextField driverIdField;
+
+    @FXML
+    public void initialize() {
+        // Limita a 4 cifre numeriche
+        UnaryOperator<TextFormatter.Change> filter = change -> {
+            String newText = change.getControlNewText();
+            if (newText.matches("\\d{0,4}")) {
+                return change; // ok
+            }
+            return null; // rigetta l'input
+        };
+        TextFormatter<String> formatter = new TextFormatter<>(filter);
+        driverIdField.setTextFormatter(formatter);
+    }
 
     // Nel onLogin passiamo a device_detection.fxml
     @FXML

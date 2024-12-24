@@ -83,7 +83,7 @@ public class ConductorController {
         // Verifica/crea l'utente nel DB (tabella drivers)
         loginOrCreateDriver(driverName, driverId);
 
-        MonitoringController.TestResult result = monitoringController.executeTest(driverId);
+        MonitoringController.TestResult result = monitoringController.executeTest(driverId, driverName);
 
         // Applichiamo classi CSS per rendere più belle le scritte:
         testResultLabel.getStyleClass().removeAll("test-success-label", "test-fail-label");

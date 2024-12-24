@@ -23,10 +23,10 @@
     <Label text="Login Conducente" styleClass="title-label"/>
 
     <Label text="Nome e Cognome:"/>
-    <TextField fx:id="driverNameField" promptText="Nome Conducente"/>
+    <TextField fx:id="driverNameField" promptText="Nome Conducente" styleClass="small-textfield"/>
 
     <Label text="ID Conducente:"/>
-    <TextField fx:id="driverIdField" promptText="ID Conducente"/>
+    <TextField fx:id="driverIdField" promptText="ID Conducente" styleClass="small-textfield"/>
 
     <Button text="Accedi" onAction="#onLogin" styleClass="primary-button"/>
 </VBox>

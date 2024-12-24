@@ -23,7 +23,7 @@ public class MonitoringController {
     /**
      * Esegue un test simulato per un dato driverId.
      */
-    public TestResult executeTest(String driverId) {
+    public TestResult executeTest(String driverId, String driverName) {
         double alcohol = Math.random(); // 0.0 - 1.0
         double thc = Math.random() * 30; // 0 - 30
         double cocaine = Math.random() * 20; // 0 - 20
@@ -36,47 +36,53 @@ public class MonitoringController {
 
         String result = passed ? "NEGATIVO" : "POSITIVO";
         // Salviamo comunque nel DB la lettura
-        saveReading(driverId, alcohol, thc, cocaine, mdma, result);
+        saveReading(driverId, driverName, alcohol, thc, cocaine, mdma, result);
 
-        // Se non passato, salviamo anche in alerts
         if (!passed) {
-            saveAlert(driverId, alcohol, thc, cocaine, mdma);
+            saveAlert(driverId, driverName, alcohol, thc, cocaine, mdma);
         }
-
         return new TestResult(passed, alcohol, thc, cocaine, mdma);
     }
 
-    private void saveReading(String driverId, double alcohol, double thc, double cocaine, double mdma, String result) {
+    private void saveReading(String driverId, String driverName,
+            double alcohol, double thc, double cocaine, double mdma, String result) {
+
         String sql = """
-                    INSERT INTO readings(driver_id, alcohol_level, thc_level, cocaine_level, mdma_level, result)
-                    VALUES(?,?,?,?,?,?)
+                    INSERT INTO readings(driver_id, driver_name,
+                        alcohol_level, thc_level, cocaine_level, mdma_level, result)
+                    VALUES (?,?,?,?,?,?,?)
                 """;
         try (Connection conn = dbManager.getConnection();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, driverId);
-            pstmt.setDouble(2, alcohol);
-            pstmt.setDouble(3, thc);
-            pstmt.setDouble(4, cocaine);
-            pstmt.setDouble(5, mdma);
-            pstmt.setString(6, result);
+            pstmt.setString(2, driverName);
+            pstmt.setDouble(3, alcohol);
+            pstmt.setDouble(4, thc);
+            pstmt.setDouble(5, cocaine);
+            pstmt.setDouble(6, mdma);
+            pstmt.setString(7, result);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    private void saveAlert(String driverId, double alcohol, double thc, double cocaine, double mdma) {
+    private void saveAlert(String driverId, String driverName,
+            double alcohol, double thc, double cocaine, double mdma) {
+
         String sql = """
-                    INSERT INTO alerts(driver_id, alcohol_level, thc_level, cocaine_level, mdma_level)
-                    VALUES(?,?,?,?,?)
+                    INSERT INTO alerts(driver_id, driver_name,
+                        alcohol_level, thc_level, cocaine_level, mdma_level)
+                    VALUES(?,?,?,?,?,?)
                 """;
         try (Connection conn = dbManager.getConnection();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, driverId);
-            pstmt.setDouble(2, alcohol);
-            pstmt.setDouble(3, thc);
-            pstmt.setDouble(4, cocaine);
-            pstmt.setDouble(5, mdma);
+            pstmt.setString(2, driverName);
+            pstmt.setDouble(3, alcohol);
+            pstmt.setDouble(4, thc);
+            pstmt.setDouble(5, cocaine);
+            pstmt.setDouble(6, mdma);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

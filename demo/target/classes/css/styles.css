@@ -113,21 +113,14 @@
     -fx-font-size: 16px;
 }
 .authorities-label {
-    -fx-text-fill: #d32f2f;      /* un rosso scuro, ad es. */
-    font-size: 18px;
-    -fx-font-size: 18px;
+    -fx-text-fill: #fc0101;      /* un rosso scuro, ad es. */
+    font-size: 20px;
+    -fx-font-size: 20px;
     font-weight: bold;
     -fx-font-weight: bold;
 }
-
-/* --- Esempio di root admin (se la userai altrove) ---
-.admin-root {
-    -fx-background-color: #2d0797;
-    -fx-padding: 20px;
+.small-textfield {
+    --fx-pref-width: 200;
+    max-width: 400px;
+    -fx-max-width: 400;
 }
-*/
-
-/* 
-   Se avevi error-label, success-label, ecc. li puoi mantenere,
-   ma li ho omessi qui per brevità.
-*/

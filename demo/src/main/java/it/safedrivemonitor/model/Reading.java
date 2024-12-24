@@ -7,12 +7,21 @@ package it.safedrivemonitor.model;
 public class Reading {
     private int id;
     private String driverId;
+    private String driverName;
     private double alcoholLevel;
     private double thcLevel;
     private double cocaineLevel;
     private double mdmaLevel;
     private String result;
     private String timestamp;
+
+    public String getDriverName() {
+        return driverName;
+    }
+
+    public void setDriverName(String driverName) {
+        this.driverName = driverName;
+    }
 
     public int getId() {
         return id;

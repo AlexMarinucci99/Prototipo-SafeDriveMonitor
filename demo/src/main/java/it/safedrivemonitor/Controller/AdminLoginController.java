@@ -46,22 +46,4 @@ public class AdminLoginController {
             System.out.println("Credenziali non valide");
         }
     }
-
-    // Se non serve più, rimuovi pure:
-    /*
-     * @FXML
-     * private void onViewLog() {
-     * try {
-     * FXMLLoader loader = new
-     * FXMLLoader(getClass().getResource("/fxml/admin_log.fxml"));
-     * Scene scene = new Scene(loader.load(), 600, 400);
-     * Stage stage = new Stage();
-     * stage.setScene(scene);
-     * stage.setTitle("Log Letture");
-     * stage.show();
-     * } catch (IOException e) {
-     * e.printStackTrace();
-     * }
-     * }
-     */
 }

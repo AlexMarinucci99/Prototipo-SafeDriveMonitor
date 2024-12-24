@@ -36,10 +36,8 @@ public class ConductorMainController {
         String driverName = ConductorSession.name;
         String driverId = ConductorSession.id;
 
-        // Se vuoi creare/recuperare l'utente
-        // ...
-        // Eseguire test
-        MonitoringController.TestResult result = monitoringController.executeTest(driverId);
+        // Eseguire test (ora con 2 parametri)
+        MonitoringController.TestResult result = monitoringController.executeTest(driverId, driverName);
 
         // Gestione scritte
         if (result.passed) {
